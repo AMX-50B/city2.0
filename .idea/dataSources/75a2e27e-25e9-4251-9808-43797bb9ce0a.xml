@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - cityweb@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="cityweb">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="book"/>
+    <schema id="3" name="city"/>
+    <schema id="4" name="hr_tables"/>
+    <schema id="5" name="information_schema"/>
+    <schema id="6" name="mysql"/>
+    <schema id="7" name="performance_schema"/>
+    <schema id="8" name="test"/>
+    <table id="9" parent="1" name="tb_category"/>
+    <table id="10" parent="1" name="tb_message"/>
+    <table id="11" parent="1" name="tb_user"/>
+    <table id="12" parent="1" name="tb_advertisement"/>
+    <table id="13" parent="1" name="tb_transaction"/>
+    <column id="14" parent="9" name="type">
+      <mandatory>1</mandatory>
+      <data-type>varchar(8)|0</data-type>
+    </column>
+    <column id="15" parent="9" name="category">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <key id="16" parent="9" name="PRIMARY">
+      <columns>type</columns>
+      <primary>1</primary>
+    </key>
+    <column id="17" parent="10" name="id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="18" parent="10" name="title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="19" parent="10" name="description">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="20" parent="10" name="category">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="21" parent="10" name="context">
+      <data-type>varchar(600)|0</data-type>
+    </column>
+    <column id="22" parent="10" name="imgUrl">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+      <default-expression>&apos;/image/background.jpg&apos;</default-expression>
+    </column>
+    <column id="23" parent="10" name="contacts">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="24" parent="10" name="phone">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="25" parent="10" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="26" parent="10" name="state">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;2&apos;</default-expression>
+    </column>
+    <column id="27" parent="10" name="date">
+      <data-type>datetime|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <column id="28" parent="10" name="type">
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <index id="29" parent="10" name="tb_message_tb_category_type_fk">
+      <columns>category</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="30" parent="10" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="31" parent="10" name="tb_message_tb_category_type_fk">
+      <columns>category</columns>
+      <ref-key>~.tb_category.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="32" parent="11" name="id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="33" parent="11" name="userName">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="34" parent="11" name="userPassword">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="35" parent="11" name="sex">
+      <data-type>varchar(2)|0</data-type>
+    </column>
+    <column id="36" parent="11" name="userState">
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <column id="37" parent="11" name="userIntegral">
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="38" parent="11" name="userEmail">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="39" parent="11" name="date">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <column id="40" parent="11" name="userUrl">
+      <data-type>varchar(100)|0</data-type>
+      <default-expression>&apos;/image/background.jpg&apos;</default-expression>
+    </column>
+    <column id="41" parent="11" name="state">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <key id="42" parent="11" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="43" parent="12" name="id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="44" parent="12" name="slogan">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="45" parent="12" name="imgUrl">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="46" parent="12" name="state">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <column id="47" parent="12" name="data">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <key id="48" parent="12" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="49" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="50" parent="13" name="type">
+      <mandatory>1</mandatory>
+      <data-type>varchar(8)|0</data-type>
+    </column>
+    <column id="51" parent="13" name="integral">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="52" parent="13" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="53" parent="13" name="date">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <column id="54" parent="13" name="money">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="55" parent="13" name="state">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <key id="56" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

@@ -1,0 +1,39 @@
+#containe{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;/*水平居中*/
+    border: 2px none black;/*边界*/
+}
+.ad{
+    width: 100%;
+    height: 200px;
+    background-color: salmon;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#bodier{
+    width: 100%;;
+    height: 850px;
+    margin: 0 auto;
+    margin-bottom: 20px;/*外边距-下 */
+    margin-top: 20px;/*外边距-上 */
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #F6F6F6;
+}
+#footer{
+    width: 100%;
+    height: 50px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+body{
+    
+    background: url("../image/background.jpg");
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
